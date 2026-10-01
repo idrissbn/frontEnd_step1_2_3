@@ -1,1 +1,18 @@
-
+[
+  {
+    "idKanban":1,
+    "kanban":"À faire"   
+  },
+  {
+    "idKanban":2,
+    "kanban":"En cours"   
+  },
+  {
+    "idKanban":3,
+    "kanban":"Terminée"   
+  },
+  {
+    "idKanban":4,
+    "kanban":"Annulée"   
+  }
+]
