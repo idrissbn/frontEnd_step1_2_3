@@ -1,1 +1,15 @@
+[
+  {
+    "idCat":1,
+    "cat":"Professionnelle"   
+  },
+  {
+    "idCat":2,
+    "cat":"Académique"   
+  },
+  {
+    "idCat":3,
+    "cat":"Personnelle"   
+  }
+]
 
