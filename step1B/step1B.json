@@ -1,1 +1,23 @@
+[
+  {
+    "idPriorite":1,
+    "priorite":"Très élevée"   
+  },
+  {
+    "idPriorite":2,
+    "priorite":"Élevée"   
+  },
+  {
+    "idPriorite":3,
+    "priorite":"Modérée"   
+  },
+  {
+    "idPriorite":4,
+    "priorite":"Faible"   
+  },
+  {
+    "idPriorite":5,
+    "priorite":"Très faible"   
+  }
+]
 
