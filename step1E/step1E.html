@@ -6,13 +6,17 @@
     <title>Document</title>
 <script>
 
-let listeTaches=[{"idTache":1,"nom":"Payer loyer","description":"Envoyer le virement à l'agence immobilière pour le loyer d'octobre","dateCreation":"2026-09-27","dateFin":"2026-10-05","dureeMin":5,"idPriorite":2,"idKanban":1,"idCat":3},{"idTache":2,"nom":"Prendre rdv directeur mémoire","description":"Proposer un créneau à Mr. Trestini par mail pour évaluer la pertinence de la question de recherche","dateCreation":"2026-09-25","dateFin":"2026-10-10","dureeMin":5,"idPriorite":3,"idKanban":1,"idCat":2}];
+let listeTaches=[{"idTache":1,"nom":"Payer loyer","description":"Envoyer le virement à l'agence immobilière pour le loyer d'octobre","dateCreation":"2026-09-27","dateFin":"2026-10-05","duree":5,"idUnite":1,"idPriorite":2,"idKanban":1,"idCat":3,"idDifficulte":1},{"idTache":2,"nom":"Prendre rdv directeur mémoire","description":"Proposer un créneau à Mr. Trestini par mail pour évaluer la pertinence de la question de recherche","dateCreation":"2026-09-25","dateFin":"2026-10-10","duree":5,"idUnite":1,"idPriorite":3,"idKanban":1,"idCat":2,"idDifficulte":2}];
 
 let priorites=[{"idPriorite":1,"priorite":"Très élevée"},{"idPriorite":2,"priorite":"Élevée"},{"idPriorite":3,"priorite":"Modérée"},{"idPriorite":4,"priorite":"Faible"},{"idPriorite":5,"priorite":"Très faible"}];
 
 let listeKanban=[{"idKanban":1,"kanban":"À faire"},{"idKanban":2,"kanban":"En cours"},{"idKanban":3,"kanban":"Terminée"},{"idKanban":4,"kanban":"Annulée"}];
 
-let categories=[{"idCat":1,"cat":"Professionnelle"},{"idCat":2,"cat":"Académique"},{"idCat":3,"cat":"Personnelle"}]
+let categories=[{"idCat":1,"cat":"Professionnelle"},{"idCat":2,"cat":"Académique"},{"idCat":3,"cat":"Personnelle"}];
+
+let difficultes=[{"idDifficulte":1,"difficulte":"Très facile"},{"idDifficulte":2,"difficulte":"Facile"},{"idDifficulte":3,"difficulte":"Moyenne"},{"idDifficulte":4,"difficulte":"Difficile"},{"idDifficulte":5,"difficulte":"Très difficile"}];
+
+let unites=[{"idUnite":1,"unite":"Minutes"},{"idUnite":2,"unite":"Heures"},{"idUnite":3,"unite":"Jours"}];
 
 console.log(listeTaches);
 
@@ -21,6 +25,10 @@ console.log(priorites);
 console.log(listeKanban);
 
 console.log(categories);
+
+console.log(difficultes);
+
+console.log(unites);
 
 </script>
 </head>
