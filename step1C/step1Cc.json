@@ -1,1 +1,23 @@
+[
+  {
+    "idDifficulte":1,
+    "difficulte":"Très facile"
+  },
+  {
+    "idDifficulte":2,
+    "difficulte":"Facile"
+  },
+  {
+    "idDifficulte":3,
+    "difficulte":"Moyenne"
+  },
+  {
+    "idDifficulte":4,
+    "difficulte":"Difficile"
+  },
+  {
+    "idDifficulte":5,
+    "difficulte":"Très difficile"
+  }
+]
 
