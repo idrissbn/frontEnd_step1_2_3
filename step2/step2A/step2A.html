@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter une tâche</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Ma To-Do List</h1>
+  </header>
+
+  <main>
+    <h2>Ajouter une tâche</h2>
+
+    <form>
+      <label for="nom">Nom de la tâche *</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="3"></textarea>
+
+      <label for="dateCreation">Date de création *</label>
+      <input type="date" id="dateCreation" name="dateCreation" required>
+
+      <label for="dateFin">Date de fin</label>
+      <input type="date" id="dateFin" name="dateFin">
+
+      <label for="duree">Durée *</label>
+      <input type="number" id="duree" name="duree" min="1" required>
+
+      <label for="idUnite">Minutes / Heures / Jours *</label>
+      <select id="idUnite" name="idUnite" required>
+        <option value="">Choisir :</option>
+        <option value="1">Minutes</option>
+        <option value="2">Heures</option>
+        <option value="3">Jours</option>
+      </select>
+
+      <label for="idPriorite">Priorité *</label>
+      <select id="idPriorite" name="idPriorite" required>
+        <option value="">Choisir :</option>
+        <option value="1">Très élevée</option>
+        <option value="2">Élevée</option>
+        <option value="3">Modérée</option>
+        <option value="4">Faible</option>
+        <option value="5">Très faible</option>
+      </select>
+
+      <label for="idKanban">Statut</label>
+      <select id="idKanban" name="idKanban">
+        <option value="1">À faire</option>
+        <option value="2">En cours</option>
+        <option value="3">Terminée</option>
+        <option value="4">Annulée</option>
+      </select>
+
+      <label for="idCat">Catégorie *</label>
+      <select id="idCat" name="idCat" required>
+        <option value="">Choisir :</option>
+        <option value="1">Professionnelle</option>
+        <option value="2">Académique</option>
+        <option value="3">Personnelle</option>
+      </select>
+
+      <label for="idDifficulte">Difficulté</label>
+      <select id="idDifficulte" name="idDifficulte">
+        <option value="">Choisir :</option>
+        <option value="1">Très facile</option>
+        <option value="2">Facile</option>
+        <option value="3">Moyenne</option>
+        <option value="4">Difficile</option>
+        <option value="5">Très difficile</option>
+      </select>
+
+      <p>* champ obligatoire</p>
+
+      <button type="submit">Ajouter la tâche</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© Idriss BENSLIMANE, Olivier CHANGO et Latifa FATNASSI - M2 SYNVA - 2026</p>
+  </footer>
+
+</body>
+</html>
