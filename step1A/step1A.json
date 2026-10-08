@@ -1,1 +1,1 @@
-{"idTache":1,"nom":" Payer loyer","description":"Envoyer le virement à l'agence immobilière","dateCreation":"2026-10-01","dateFin":"2026-10-05","dureeMin":5}
+{"idTache":1,"nom":" Payer loyer","description":"Envoyer le virement à l'agence immobilière","dateCreation":"2026-10-01","dateFin":"2026-10-05","duree":5,"idUnite":1}
