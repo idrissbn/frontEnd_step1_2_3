@@ -1,14 +1,17 @@
 [
   {
     "idUnite":1,
-    "unite":"Minutes"
+    "unite":"Minutes",
+    "secondes":60
   },
   {
     "idUnite":2,
-    "unite":"Heures"
+    "unite":"Heures",
+    "secondes":3600
   },
   {
     "idUnite":3,
-    "unite":"Jours"
+    "unite":"Jours",
+    "secondes":86400
   }
 ]
