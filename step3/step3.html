@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter une tâche</title>
+  <link rel="stylesheet" href="style.css">
+<script>
+
+// données JSON des variables
+let priorites=[{"idPriorite":1,"priorite":"Très élevée"},{"idPriorite":2,"priorite":"Élevée"},{"idPriorite":3,"priorite":"Modérée"},{"idPriorite":4,"priorite":"Faible"},{"idPriorite":5,"priorite":"Très faible"}];
+
+let listeKanban=[{"idKanban":1,"kanban":"À faire"},{"idKanban":2,"kanban":"En cours"},{"idKanban":3,"kanban":"Terminée"},{"idKanban":4,"kanban":"Annulée"}];
+
+let categories=[{"idCat":1,"cat":"Professionnelle"},{"idCat":2,"cat":"Académique"},{"idCat":3,"cat":"Personnelle"}];
+
+let difficultes=[{"idDifficulte":1,"difficulte":"Très facile"},{"idDifficulte":2,"difficulte":"Facile"},{"idDifficulte":3,"difficulte":"Moyenne"},{"idDifficulte":4,"difficulte":"Difficile"},{"idDifficulte":5,"difficulte":"Très difficile"}];
+
+let unites=[{"idUnite":1,"unite":"Minutes","secondes":60},{"idUnite":2,"unite":"Heures","secondes":3600},{"idUnite":3,"unite":"Jours","secondes":86400}];
+
+
+// enregistrer une tâche dans le localStorage
+function saveTask(){
+
+  // lecture des champs du formulaire
+  let nom=document.getElementById("nom").value;
+  let description=document.getElementById("description").value;
+  let dateCreation=document.getElementById("dateCreation").value;
+  let dateFin=document.getElementById("dateFin").value;
+  let duree=document.getElementById("duree").value;
+  let idUnite=document.getElementById("idUnite").value;
+  let idPriorite=document.getElementById("idPriorite").value;
+  let idKanban=document.getElementById("idKanban").value;
+  let idCat=document.getElementById("idCat").value;
+  let idDifficulte=document.getElementById("idDifficulte").value;
+  console.log(`nom : ${nom}, description : ${description}, dateCreation : ${dateCreation}, dateFin : ${dateFin}, duree : ${duree}, idUnite : ${idUnite}, idPriorite : ${idPriorite}, idKanban : ${idKanban}, idCat : ${idCat}, idDifficulte : ${idDifficulte}`);
+
+  // initialisation et vérification des tâches
+  let listeTaches=[];
+  let dataString=localStorage.getItem("listeTaches");
+  if(dataString!=null) listeTaches=JSON.parse(dataString);
+  console.log(listeTaches);
+
+  // création d'une nouvelle tâche en JSON
+  let newIdTache=listeTaches.length+1;
+  let newTache={"idTache":newIdTache,"nom":nom,"description":description,"dateCreation":dateCreation,"dateFin":dateFin,"duree":duree,"idUnite":idUnite,"idPriorite":idPriorite,"idKanban":idKanban,"idCat":idCat,"idDifficulte":idDifficulte};
+  console.log(newTache);
+
+  // ajouter la tâche à la liste
+  listeTaches.push(newTache);
+  console.log(listeTaches);
+
+  // enregistrer la liste dans le localStorage
+  let listeTachesString=JSON.stringify(listeTaches);
+  localStorage.setItem("listeTaches",listeTachesString);
+
+  // réinitialiser le formulaire pour une nouvelle tâche
+  document.getElementById("formTache").reset();
+
+}
+
+</script>
+</head>
+<body>
+
+  <header>
+    <h1>Ma To-Do List</h1>
+  </header>
+
+  <main>
+    <h2>Ajouter une tâche</h2>
+
+    <form id="formTache">
+      <label for="nom">Nom de la tâche *</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="3"></textarea>
+
+      <label for="dateCreation">Date de création *</label>
+      <input type="date" id="dateCreation" name="dateCreation" required>
+
+      <label for="dateFin">Date de fin</label>
+      <input type="date" id="dateFin" name="dateFin">
+
+      <label for="duree">Durée *</label>
+      <input type="number" id="duree" name="duree" min="1" required>
+
+      <label for="idUnite">Minutes / Heures / Jours *</label>
+      <select id="idUnite" name="idUnite" required>
+        <option value="">Choisir :</option>
+      </select>
+      <script>
+        unites.forEach(function(item){
+          let option=`<option value="${item.idUnite}">${item.unite}</option>`;
+          document.getElementById('idUnite').insertAdjacentHTML('beforeend',option);
+        });
+      </script>
+
+      <label for="idPriorite">Priorité *</label>
+      <select id="idPriorite" name="idPriorite" required>
+        <option value="">Choisir :</option>
+      </select>
+      <script>
+        priorites.forEach(function(item){
+          let option=`<option value="${item.idPriorite}">${item.priorite}</option>`;
+          document.getElementById('idPriorite').insertAdjacentHTML('beforeend',option);
+        });
+      </script>
+
+      <label for="idKanban">Statut</label>
+      <select id="idKanban" name="idKanban">
+      </select>
+      <script>
+        listeKanban.forEach(function(item){
+          let option=`<option value="${item.idKanban}">${item.kanban}</option>`;
+          document.getElementById('idKanban').insertAdjacentHTML('beforeend',option);
+        });
+      </script>
+
+      <label for="idCat">Catégorie *</label>
+      <select id="idCat" name="idCat" required>
+        <option value="">Choisir :</option>
+      </select>
+      <script>
+        categories.forEach(function(item){
+          let option=`<option value="${item.idCat}">${item.cat}</option>`;
+          document.getElementById('idCat').insertAdjacentHTML('beforeend',option);
+        });
+      </script>
+
+      <label for="idDifficulte">Difficulté</label>
+      <select id="idDifficulte" name="idDifficulte">
+        <option value="">Choisir :</option>
+      </select>
+      <script>
+        difficultes.forEach(function(item){
+          let option=`<option value="${item.idDifficulte}">${item.difficulte}</option>`;
+          document.getElementById('idDifficulte').insertAdjacentHTML('beforeend',option);
+        });
+      </script>
+
+      <p>* champ obligatoire</p>
+
+      <button type="button" onclick="saveTask()">Ajouter la tâche</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© Idriss BENSLIMANE, Olivier CHANGO et Latifa FATNASSI - M2 SYNVA - 2026</p>
+  </footer>
+
+</body>
+</html>
